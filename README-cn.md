@@ -6,8 +6,8 @@
 <p align="center">
     <a href="https://github.com/ChuckieChen945/scoop-of-starts">GitHub</a> |
     <a href="https://gitee.com/Chuckie_Chen/scoop-of-stars">Gitee</a> |
-    <a href="README-cn.md">简体中文</a> |
-    <a href="README.md">English</a> |
+    <a href="readme-cn.md">简体中文</a> |
+    <a href="readme.md">English</a> |
 </p>
 
 <p align="center">
