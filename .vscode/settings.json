@@ -10,14 +10,12 @@
     "json.schemas": [
         {
             "url": "https://raw.githubusercontent.com/ScoopInstaller/Scoop/master/schema.json",
-            "fileMatch": [
-                "bucket/**/*.json"
-            ]
+            "fileMatch": ["bucket/**/*.json"]
         }
     ],
     "files.insertFinalNewline": true,
     "files.exclude": {
-        "**/.git": true,
+        // "**/.git": true,
         "**/.svn": true,
         "**/.hg": true,
         "**/CVS": true,

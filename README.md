@@ -1,42 +1,96 @@
-# Scoop Bucket Template
+<!-- markdownlint-disable MD033 MD041 -->
+<p align="center">
+    <h1 align="center">⭐ scoop of starts ⭐</h1>
+</p>
 
-<!-- Uncomment the following line after replacing placeholders -->
-<!-- [![Tests](https://github.com/<username>/<bucketname>/actions/workflows/ci.yml/badge.svg)](https://github.com/<username>/<bucketname>/actions/workflows/ci.yml) [![Excavator](https://github.com/<username>/<bucketname>/actions/workflows/excavator.yml/badge.svg)](https://github.com/<username>/<bucketname>/actions/workflows/excavator.yml) -->
+<p align="center">
+    <a href="https://github.com/ChuckieChen945/scoop-of-starts">GitHub</a> |
+    <a href="https://gitee.com/Chuckie_Chen/scoop-of-stars">Gitee</a> |
+    <a href="README-cn.md">简体中文</a> |
+    <a href="README.md">English</a> |
+</p>
 
-Template bucket for [Scoop](https://scoop.sh), the Windows command-line installer.
+<p align="center">
+    <a href="https://github.com/ChuckieChen945/scoop-of-starts/actions/workflows/ci.yml">
+        <img src="https://github.com/ChuckieChen945/scoop-of-starts/actions/workflows/ci.yml/badge.svg" alt="CI Status" />
+    </a>
+    <a href="https://github.com/ChuckieChen945/scoop-of-starts/actions/workflows/excavator.yml">
+        <img src="https://github.com/ChuckieChen945/scoop-of-starts/actions/workflows/excavator.yml/badge.svg" alt="Excavator Status" />
+    </a>
+</p>
 
-## How do I use this template?
+> [!Note]
+>
+> This is an **unofficial Scoop bucket** that contains selected **[Anki add-ons](https://ankiweb.net/shared/addons)** and related tools. It helps users manage Anki add-ons conveniently via the command line using Scoop.
 
-1. Generate your own copy of this repository with the "Use this template"
-   button.
-2. Allow all GitHub Actions:
-   - Navigate to `Settings` - `Actions` - `General` - `Actions permissions`.
-   - Select `Allow all actions and reusable workflows`.
-   - Then `Save`.
-3. Allow writing to the repository from within GitHub Actions:
-   - Navigate to `Settings` - `Actions` - `General` - `Workflow permissions`.
-   - Select `Read and write permissions`.
-   - Then `Save`.
-4. Document the bucket in `README.md`.
-5. Replace the placeholder repository string in `bin/auto-pr.ps1`.
-6. Create new manifests by copying `bucket/app-name.json.template` to
-   `bucket/<app-name>.json`.
-7. Commit and push changes.
-8. If you'd like your bucket to be indexed on `https://scoop.sh`, add the
-   topic `scoop-bucket` to your repository.
+---
 
-## How do I install these manifests?
+## 🌟 What is “scoop of starts”?
 
-After manifests have been committed and pushed, run the following:
+> The name is inspired by:
+>
+> * **Scoop**: a command-line installer for Windows.
+> * **Anki**: whose icon is a ✨star✨.
+>
+> So this bucket is literally a “scoop of stars” — a small collection of shining Anki add-ons!
 
-```pwsh
-scoop bucket add <bucketname> https://github.com/<username>/<bucketname>
-scoop install <bucketname>/<manifestname>
+---
+
+## 📦 How to install apps from this bucket?
+
+First, make sure [Scoop](https://scoop.sh) is installed. Then install Anki via Scoop:
+
+```powershell
+scoop bucket add extras
+scoop install extras/anki
 ```
 
-## How do I contribute new manifests?
+Next, add this bucket and install any Anki add-on like this:
 
-To make a new manifest contribution, please read the [Contributing
-Guide](https://github.com/ScoopInstaller/.github/blob/main/.github/CONTRIBUTING.md)
-and [App Manifests](https://github.com/ScoopInstaller/Scoop/wiki/App-Manifests)
-wiki page.
+```powershell
+scoop bucket add starts https://github.com/ChuckieChen945/scoop-of-starts.git
+scoop install starts/<plugin-name>
+```
+
+---
+
+## 🧠 How it works
+
+Each plugin manifest in this repository is configured to download the plugin directly from the developer’s site. Scoop then locates Anki’s installation path and copies the plugin into the `scoop/persist/anki/data/addons21` directory.
+
+Anki automatically loads plugins from this directory upon startup. This bucket attempts to support Scoop’s auto-update mechanism, but due to the unstructured nature of most Anki add-on releases, only a limited number of them can be updated automatically.
+
+---
+
+## 🙋 For Developers
+
+Utility functions are provided in `bin/utils.ps1` to help standardize Anki add-on installation and reduce redundant code. If other buckets plan to merge or reuse these tools, please review compatibility carefully.
+
+---
+
+## 📃 App List
+
+| App                                                                       | Version | Persist | Tag         | Description                       |
+| ------------------------------------------------------------------------- | ------- | ------- | ----------- | --------------------------------- |
+| [ImageOcclusion](https://github.com/glutanimate/image-occlusion-enhanced) | latest  | ✔️       | anki add-on | Image Occlusion Enhanced for Anki |
+| [AnkiConnect](https://github.com/FooSoft/anki-connect)                    | latest  | ➖       | anki add-on | Remote API interface for Anki     |
+| ...                                                                       | ...     | ...     | ...         | ...                               |
+
+---
+
+## 🤝 How to contribute?
+
+We welcome contributions!
+
+Please refer to the following guides:
+
+* [Scoop App Manifest Guide](https://github.com/ScoopInstaller/Scoop/wiki/App-Manifests)
+* [Scoop Contribution Guide](https://github.com/ScoopInstaller/.github/blob/main/.github/CONTRIBUTING.md)
+
+You can fork this repository, create a new branch, add your manifest(s), and open a pull request.
+
+---
+
+## 📜 License
+
+This project is licensed under the [MIT License](LICENSE).
