@@ -8,22 +8,12 @@ BeforeAll {
         param ($name, $scope)
         return 'C:\User\name\scoop\'
     }
-    function New-DirectoryJunction {
-        return 'done'
-
-    }
-
-    Mock -CommandName New-DirectoryJunction {}
-
 
     $app = 'fallback-addon-id'
     $global = $true
     $manifest = @{ addon_id = '123456'; homepage = 'irrelevant' }
 
     . "$PSScriptRoot\utils.ps1"
-
-    Mock Install-AnkiAddonCopy {}
-    Mock Uninstall-AnkiAddonCopy {}
 }
 
 
@@ -62,6 +52,16 @@ Describe "Get-AnkiAddonBasePath" {
 
 Describe "Install-AnkiAddonJunction and Uninstall-AnkiAddonJunction" {
 
+    BeforeEach {
+
+        function New-DirectoryJunction {
+            return 'done'
+
+        }
+
+        Mock -CommandName New-DirectoryJunction {}
+    }
+
     It "creates junction when target does not exist" {
         Mock -CommandName Test-Path -MockWith { $false }
         Install-AnkiAddonJunction -AddonID "1234567890" -SourceDir "C:\Addon" -PersistDirAnki "C:\Anki"
@@ -77,21 +77,31 @@ Describe "Install-AnkiAddonJunction and Uninstall-AnkiAddonJunction" {
 
 Describe "Install-AnkiAddonCopy and Uninstall-AnkiAddonCopy" {
 
-    It "copies addon if target does not exist" {
+    BeforeEach {
+
         Mock -CommandName Copy-Item {}
+        Mock -CommandName Remove-Item {}
+    }
+
+    It "copies addon if target does not exist" {
+        Mock -CommandName Test-Path -MockWith { $false }
         Install-AnkiAddonCopy -AddonID "addon" -SourceDir "C:\Users\Public" -PersistDirAnki "C:\Users"
         Assert-MockCalled -CommandName Copy-Item -Exactly 1
     }
 
     It "removes copied addon during uninstall" {
         Mock -CommandName Test-Path -MockWith { $true }
-        Mock -CommandName Remove-Item {}
         Uninstall-AnkiAddonCopy -AddonID "addon" -PersistDirAnki "C:\Anki"
         Assert-MockCalled -CommandName Remove-Item -Exactly 1
     }
 }
 
 Describe "AutoInstall / AutoUninstall" {
+    BeforeEach {
+        . "$PSScriptRoot\utils.ps1"
+        Mock Install-AnkiAddonCopy {}
+        Mock Uninstall-AnkiAddonCopy {}
+    }
 
     It "calls Install-AnkiAddonCopy with removeSource = true" {
         AutoInstall -AddonID "id" -SourceDir "src" -PersistDirAnki "anki"

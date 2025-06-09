@@ -92,23 +92,22 @@ function Install-AnkiAddonCopy {
         [string]$PersistDirAnki,
         [bool]$removeSource = $false
     )
-    Copy-Item
 
-    # $targetPath = Join-Path (Get-AnkiAddonBasePath $PersistDirAnki) $AddonID
+    $targetPath = Join-Path (Get-AnkiAddonBasePath $PersistDirAnki) $AddonID
 
-    # if (Test-Path $targetPath) {
-    #     Write-Warning "Target exists: $targetPath. Skipping copy."
-    #     return
-    # }
+    if (Test-Path $targetPath) {
+        Write-Warning "Target exists: $targetPath. Skipping copy."
+        return
+    }
 
-    # try {
-    #     Copy-Item -Path $SourceDir -Destination $targetPath -Recurse
-    #     if ($removeSource) {
-    #         Remove-Item -Path $SourceDir -Recurse -Force
-    #     }
-    # } catch {
-    #     Write-Error "Failed to copy: $_"
-    # }
+    try {
+        Copy-Item -Path $SourceDir -Destination $targetPath -Recurse
+        if ($removeSource) {
+            Remove-Item -Path $SourceDir -Recurse -Force
+        }
+    } catch {
+        Write-Error "Failed to copy: $_"
+    }
 }
 
 function Uninstall-AnkiAddonCopy {
@@ -117,16 +116,15 @@ function Uninstall-AnkiAddonCopy {
         [string]$AddonID,
         [string]$PersistDirAnki
     )
-    Remove-Item
-    # $targetPath = Join-Path (Get-AnkiAddonBasePath $PersistDirAnki) $AddonID
+    $targetPath = Join-Path (Get-AnkiAddonBasePath $PersistDirAnki) $AddonID
 
-    # if (Test-Path $targetPath) {
-    #     try {
-    #         Remove-Item -Path $targetPath -Recurse -Force
-    #     } catch {
-    #         Write-Error "Failed to remove: $_"
-    #     }
-    # }
+    if (Test-Path $targetPath) {
+        try {
+            Remove-Item -Path $targetPath -Recurse -Force
+        } catch {
+            Write-Error "Failed to remove: $_"
+        }
+    }
 }
 
 # function Install-AnkiAddonDependencyJunction {
