@@ -9,13 +9,12 @@
     "extract_dir": "fsrs4anki-helper-main",
     "depends": ["extras/anki"],
     "installer": {
-        "script": [
-            "New-DirectoryJunction \"$(persistdir anki $global)\\data\\addons21\\$app\" $dir | Out-Null"
-        ]
+        "script": [". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"", "AutoInstall"]
     },
     "uninstaller": {
         "script": [
-            "Remove-Item -Path \"$(persistdir anki $global)\\data\\addons21\\$app\" -ErrorAction SilentlyContinue -Recurse -Force"
+            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+            "AutoUninstall"
         ]
     }
 }

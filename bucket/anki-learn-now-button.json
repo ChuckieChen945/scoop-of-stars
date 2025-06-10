@@ -5,17 +5,23 @@
     "license": "AGPL-3.0 license",
     "url": "https://github.com/Ajatt-Tools/learn-now-button/archive/refs/heads/main.zip",
     "extract_dir": "learn-now-button-main",
-    "depends": ["extras/anki", "scoop-of-starts/anki-ajt_common"],
+    "depends": ["extras/anki", "ChuckieChen945_scoop-of-stars/anki-ajt-common"],
     "installer": {
         "script": [
-            "New-DirectoryJunction \"$(persistdir anki $global)\\data\\addons21\\$app\" $dir | Out-Null",
-            "Remove-Item -Path \"$(persistdir anki $global)\\data\\addons21\\$app\\ajt_common\" -ErrorAction SilentlyContinue -Recurse -Force",
-            "New-DirectoryJunction \"$(persistdir anki $global)\\data\\addons21\\$app\\ajt_common\" \"$(appdir ajt_common $global)\\current\" | Out-Null"
+            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+            "Copy-Item -Path $dir -Destination $AddonPath -Recurse",
+            "Write-Host \"Copied $dir to $AddonPath\"",
+            "Remove-Item -Path \"$AddonPath\\ajt_common\" -ErrorAction SilentlyContinue -Recurse -Force",
+            "Copy-Item -Path \"$(appdir anki-ajt-common $global)\\current\" -Destination \"$AddonPath\\ajt_common\" -Recurse",
+            "Write-Host \"Copied anki-ajt-common to $AddonPath\\ajt_common\"",
+            "Get-ChildItem -Path $dir -Recurse | Remove-Item -Force -ErrorAction SilentlyContinue -Recurse",
+            "Write-Host \"Removed temporary files from $dir\""
         ]
     },
     "uninstaller": {
         "script": [
-            "Remove-Item -Path \"$(persistdir anki $global)\\data\\addons21\\$app\" -ErrorAction SilentlyContinue -Recurse -Force"
+            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+            "AutoUninstall"
         ]
     }
 }

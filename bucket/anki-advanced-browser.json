@@ -9,13 +9,12 @@
     "hash": "c33612e85830fb9ba1822f20594986678299529ba044605ba0faa6e201bcf523",
     "depends": ["extras/anki"],
     "installer": {
-        "script": [
-            "New-DirectoryJunction \"$(persistdir anki $global)\\data\\addons21\\$app\" $dir | Out-Null"
-        ]
+        "script": [". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"", "AutoInstall"]
     },
     "uninstaller": {
         "script": [
-            "Remove-Item -Path \"$(persistdir anki $global)\\data\\addons21\\$app\" -ErrorAction SilentlyContinue -Recurse -Force"
+            ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+            "AutoUninstall"
         ]
     },
     "checkver": {
