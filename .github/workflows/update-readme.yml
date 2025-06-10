@@ -1,0 +1,31 @@
+name: Update README
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: [Excavator]
+    types: [completed]
+  push:
+    branches:
+      - main
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Generate list and update README content
+        run: |
+          .\bin\generate-list.ps1 "./readme.md"
+          .\bin\generate-list.ps1 "./readme-cn.md"
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Automatically update README"
+          git push

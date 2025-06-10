@@ -70,16 +70,6 @@ scoop install ChuckieChen945_scoop-of-stars/<插件名>
 
 ---
 
-## 📃 插件列表
-
-| 插件名称                                                                  | 版本   | 是否持久化 | 标签      | 简介                      |
-| ------------------------------------------------------------------------- | ------ | ---------- | --------- | ------------------------- |
-| [ImageOcclusion](https://github.com/glutanimate/image-occlusion-enhanced) | latest | ✔️          | anki 插件 | Anki 的图像遮挡增强插件   |
-| [AnkiConnect](https://github.com/FooSoft/anki-connect)                    | latest | ➖          | anki 插件 | 提供远程 API 的 Anki 插件 |
-| ...                                                                       | ...    | ...        | ...       | ...                       |
-
----
-
 ## 🤝 如何参与贡献？
 
 我们欢迎所有形式的贡献！
@@ -102,3 +92,19 @@ scoop install ChuckieChen945_scoop-of-stars/<插件名>
 ## 📜 许可证
 
 本项目采用 [MIT License](LICENSE) 开源许可协议。
+
+---
+
+## 📃 插件列表
+
+<!-- prettier-ignore-start -->
+|Anki addons (7)|version|description|github url|
+|:-:|:-:|:-:|-|
+|[anki-advanced-browser](https://ankiweb.net/shared/info/874215009 "点击查看 anki-advanced-browser 的主页或仓库")|<a href="./bucket/anki-advanced-browser.json" title="点击查看 anki-advanced-browser 的 manifest json 文件"><img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FChuckieChen945%2Fscoop-of-stars%2Frefs%2Fheads%2Fmain%2Fbucket%2Fanki-advanced-browser.json&query=%24.version&prefix=v&label=%20" alt="version" /></a>|Anki add-on with card browser enhancements.|<https://github.com/AnKing-VIP/advanced-browser/releases/download/v4.4/Advanced_Browser__branch_idx_5__AnkiVers_231000-231000__2023-10-15.ankiaddon#/dl.zip>|
+|[anki-ajt-common](https://github.com/Ajatt-Tools/ajt_common/ "点击查看 anki-ajt-common 的主页或仓库")|<a href="./bucket/anki-ajt-common.json" title="点击查看 anki-ajt-common 的 manifest json 文件"><img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FChuckieChen945%2Fscoop-of-stars%2Frefs%2Fheads%2Fmain%2Fbucket%2Fanki-ajt-common.json&query=%24.version&prefix=v&label=%20" alt="version" /></a>|🍘 Common information for anki AJT add-ons.|<https://github.com/Ajatt-Tools/ajt_common/archive/refs/heads/main.zip>|
+|[anki-anki-javascript-api](https://ankiweb.net/shared/info/1490471827 "点击查看 anki-anki-javascript-api 的主页或仓库")|<a href="./bucket/anki-anki-javascript-api.json" title="点击查看 anki-anki-javascript-api 的 manifest json 文件"><img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FChuckieChen945%2Fscoop-of-stars%2Frefs%2Fheads%2Fmain%2Fbucket%2Fanki-anki-javascript-api.json&query=%24.version&prefix=v&label=%20" alt="version" /></a>|Anki JavaScript API to get cards informations in reviewer window|<https://github.com/krmanik/AnkiJS-API/archive/refs/heads/main.zip>|
+|[anki-crowd-anki](https://ankiweb.net/shared/info/1788670778 "点击查看 anki-crowd-anki 的主页或仓库")|<a href="./bucket/anki-crowd-anki.json" title="点击查看 anki-crowd-anki 的 manifest json 文件"><img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FChuckieChen945%2Fscoop-of-stars%2Frefs%2Fheads%2Fmain%2Fbucket%2Fanki-crowd-anki.json&query=%24.version&prefix=v&label=%20" alt="version" /></a>|Plugin for Anki SRS designed to facilitate cooperation on creation of notes and decks.|<https://github.com/Stvad/CrowdAnki/releases/download/v0.9.5/crowd_anki_20231030.zip>|
+|[anki-customize-keyboard-shortcuts](https://ankiweb.net/shared/info/24411424 "点击查看 anki-customize-keyboard-shortcuts 的主页或仓库")|<a href="./bucket/anki-customize-keyboard-shortcuts.json" title="点击查看 anki-customize-keyboard-shortcuts 的 manifest json 文件"><img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FChuckieChen945%2Fscoop-of-stars%2Frefs%2Fheads%2Fmain%2Fbucket%2Fanki-customize-keyboard-shortcuts.json&query=%24.version&prefix=v&label=%20" alt="version" /></a>|Custom Keyboard Shortcuts for Anki 2.1|<https://github.com/Liresol/anki-custom-shortcuts/archive/refs/heads/merge-main-into-dev.zip>|
+|[anki-fsrs-helper](https://ankiweb.net/shared/info/759844606 "点击查看 anki-fsrs-helper 的主页或仓库")|<a href="./bucket/anki-fsrs-helper.json" title="点击查看 anki-fsrs-helper 的 manifest json 文件"><img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FChuckieChen945%2Fscoop-of-stars%2Frefs%2Fheads%2Fmain%2Fbucket%2Fanki-fsrs-helper.json&query=%24.version&prefix=v&label=%20" alt="version" /></a>|An Anki add-on that supports Postpone & Advance & Load Balance & Easy Days & Disperse Siblings & Flatten|<https://github.com/open-spaced-repetition/fsrs4anki-helper/archive/refs/heads/main.zip>|
+|[anki-learn-now-button](https://ankiweb.net/shared/info/1021636467 "点击查看 anki-learn-now-button 的主页或仓库")|<a href="./bucket/anki-learn-now-button.json" title="点击查看 anki-learn-now-button 的 manifest json 文件"><img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FChuckieChen945%2Fscoop-of-stars%2Frefs%2Fheads%2Fmain%2Fbucket%2Fanki-learn-now-button.json&query=%24.version&prefix=v&label=%20" alt="version" /></a>|🍝 Put cards in the learning queue and answer cards from the Card Browser.|<https://github.com/Ajatt-Tools/learn-now-button/archive/refs/heads/main.zip>|
+<!-- prettier-ignore-end -->

@@ -76,16 +76,6 @@ Utility functions are provided in `bin/utils.ps1` to help standardize Anki add-o
 
 ---
 
-## 📃 App List
-
-| App                                                                       | Version | Persist | Tag         | Description                       |
-| ------------------------------------------------------------------------- | ------- | ------- | ----------- | --------------------------------- |
-| [ImageOcclusion](https://github.com/glutanimate/image-occlusion-enhanced) | latest  | ✔️       | anki add-on | Image Occlusion Enhanced for Anki |
-| [AnkiConnect](https://github.com/FooSoft/anki-connect)                    | latest  | ➖       | anki add-on | Remote API interface for Anki     |
-| ...                                                                       | ...     | ...     | ...         | ...                               |
-
----
-
 ## 🤝 How to contribute?
 
 We welcome contributions!
@@ -108,3 +98,11 @@ You can fork this repository, create a new branch, add your manifest(s), and ope
 ## 📜 License
 
 This project is licensed under the [MIT License](LICENSE).
+
+---
+
+## 📃 Add-ons List
+
+<!-- prettier-ignore-start -->
+
+<!-- prettier-ignore-end -->
