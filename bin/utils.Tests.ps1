@@ -81,6 +81,7 @@ Describe "Install-AnkiAddonCopy and Uninstall-AnkiAddonCopy" {
 
         Mock -CommandName Copy-Item {}
         Mock -CommandName Remove-Item {}
+        Mock -CommandName Get-ChildItem { @('test') }
     }
 
     It "copies addon if target does not exist" {
